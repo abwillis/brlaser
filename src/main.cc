@@ -146,7 +146,7 @@ int main(int argc, char *argv[]) {
 
   int fd = STDIN_FILENO;
   if (job_filename) {
-    fd = open(job_filename, O_RDONLY);
+    fd = open(job_filename, O_RDONLY || O_BINARY);
     if (fd < 0) {
       fprintf(stderr, "ERROR: " PACKAGE ": Unable to open raster file\n");
       return 1;

@@ -111,6 +111,11 @@ add_executable(rastertobrlaser src/main.cc src/job.cc src/line.cc src/debug.cc)
 target_compile_options(rastertobrlaser PRIVATE ${CUPS_CFLAGS})
 target_link_libraries(rastertobrlaser ${CUPS_LIBS})
 target_link_libraries(rastertobrlaser ${CUPS_LDFLAGS})
+if(OS2)
+  set_target_properties(rastertobrlaser PROPERTIES
+   OS2_DEF_VENDOR "Andy Willis"
+   OS2_DEF_VERSION "${BRLASER_VERSION}")
+endif()
 
 add_executable(brdecode src/brdecode.cc)
 add_executable(test_lest test/test_lest.cc)

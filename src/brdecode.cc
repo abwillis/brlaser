@@ -21,6 +21,7 @@
 #include <algorithm>
 #include <exception>
 #include <vector>
+#include <sstream>
 #include <string>
 
 namespace {
@@ -172,6 +173,16 @@ void write_pnm(FILE *f) {
 }
 
 }  // namespace
+
+namespace std
+{
+ template < typename T > std::string to_string( const T& n )
+ {
+ std::ostringstream stm ;
+ stm << n ;
+ return stm.str() ;
+ }
+}
 
 int main(int argc, char *argv[]) {
   const char *in_filename;
