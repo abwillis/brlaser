@@ -117,7 +117,7 @@ if(OS2)
    OS2_DEF_VERSION "${BRLASER_VERSION}")
 endif()
 
-add_executable(brdecode src/brdecode.cc)
+add_executable(brdecode EXCLUDE_FROM_ALL src/brdecode.cc)
 add_executable(test_lest test/test_lest.cc)
 add_executable(test_line test/test_line.cc src/line.cc)
 add_executable(test_block test/test_block.cc)
