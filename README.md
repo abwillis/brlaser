@@ -21,6 +21,7 @@ This driver has been reported to work with these printers:
 * Brother DCP-7080
 * Brother DCP-L2500D series
 * Brother DCP-L2520D series
+* Brother DCP-L2520DW series
 * Brother DCP-L2540DW series
 * Brother HL-1110 series
 * Brother HL-1200 series
@@ -33,10 +34,14 @@ This driver has been reported to work with these printers:
 * Brother HL-L2320D series
 * Brother HL-L2340D series
 * Brother HL-L2360D series
+* Brother HL-L2375DW series
+* Brother HL-L2390DW
 * Brother MFC-1910W
 * Brother MFC-7240
 * Brother MFC-7360N
 * Brother MFC-7365DN
+* Brother MFC-7420
+* Brother MFC-7460DN
 * Brother MFC-7840W
 * Brother MFC-L2710DW series
 * Lenovo M7605D
@@ -60,7 +65,8 @@ Installation
 ------------
 
 Some operating systems already ship this driver. This is the case for
-at least Debian, Ubuntu, Raspbian, openSUSE, NixOS and Arch Linux.
+at least Debian, Gentoo, Ubuntu, Raspbian, openSUSE, NixOS, Arch Linux 
+and Guix.
 Look for a package named `printer-driver-brlaser`.
 
 You'll also need Ghostscript, in case that's not installed

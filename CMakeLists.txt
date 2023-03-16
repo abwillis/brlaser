@@ -39,10 +39,11 @@ endmacro(extra_cxx_compiler_flag)
 # Compiler warnings
 extra_cxx_compiler_flag("-Wall")
 extra_cxx_compiler_flag("-Wno-missing-braces")
-# Some security flags
+extra_cxx_compiler_flag("-Wdate-time")
+# Some hardening flags
 extra_cxx_compiler_flag("-fstack-protector-strong")
 extra_cxx_compiler_flag("-Wformat")
-extra_cxx_compiler_flag("-Werror=format-security")
+extra_cxx_compiler_flag("-Wformat -Werror=format-security")
 extra_cxx_compiler_flag("-D_FORTIFY_SOURCE=2")
 # Enable the supported flags, but give priority to CXXFLAGS env var
 set(CMAKE_CXX_FLAGS "${EXTRA_CXX_FLAGS} ${CMAKE_CXX_FLAGS}")
@@ -121,15 +122,17 @@ add_executable(brdecode EXCLUDE_FROM_ALL src/brdecode.cc)
 add_executable(test_lest test/test_lest.cc)
 add_executable(test_line test/test_line.cc src/line.cc)
 add_executable(test_block test/test_block.cc)
+add_executable(test_job test/test_job.cc src/job.cc src/line.cc)
 
 enable_testing()
 add_test(test_lest test_lest)
 add_test(test_line test_line)
 add_test(test_block test_block)
+add_test(test_job test_job)
 
 # Autotools-style "make check" command
 add_custom_target(check COMMAND ${CMAKE_CTEST_COMMAND})
-add_dependencies(check test_lest test_line test_block)
+add_dependencies(check test_lest test_line test_block test_job)
 
 
 # Installation

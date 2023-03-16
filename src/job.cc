@@ -26,17 +26,18 @@
 job::job(FILE *out, const std::string &job_name)
     : out_(out),
       job_name_(job_name),
-      page_params_() {
+      page_params_(),
+      pages_(0) {
   // Delete dubious characters from job name
   std::replace_if(job_name_.begin(), job_name_.end(), [](char c) {
       return c < 32 || c >= 127 || c == '"' || c == '\\';
     }, ' ');
-
-  begin_job();
 }
 
 job::~job() {
-  end_job();
+  if (pages_ != 0) {
+    end_job();
+  }
 }
 
 void job::begin_job() {
@@ -86,6 +87,11 @@ void job::encode_page(const page_params &page_params,
                       int lines,
                       int linesize,
                       nextline_fn nextline) {
+  if (pages_ == 0) {
+    begin_job();
+  }
+  ++pages_;
+
   if (!(page_params_ == page_params)) {
     page_params_ = page_params;
     write_page_header();
@@ -103,14 +109,22 @@ void job::encode_page(const page_params &page_params,
 
   fputs("\033*b1030m", out_);
 
+  // XXX brother driver uses 128 lines per band
+  const int lines_per_band = 64;
+
   for (int i = 1; i < lines && nextline(line); ++i) {
-    std::vector<uint8_t> encoded = encode_line(line, reference);
-    if (block.line_fits(encoded.size())) {
-      block.add_line(std::move(encoded));
-    } else {
+    std::vector<uint8_t> encoded;
+    if (i % lines_per_band == 0) {
       block.flush(out_);
-      block.add_line(encode_line(line));
+      encoded = encode_line(line);
+    } else {
+      encoded = encode_line(line, reference);
+      if (!block.line_fits(encoded.size())) {
+        block.flush(out_);
+        encoded = encode_line(line);
+      }
     }
+    block.add_line(std::move(encoded));
     std::swap(line, reference);
   }
 
