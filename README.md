@@ -42,6 +42,8 @@ The following printers have been reported to work with this driver:
 * Brother FAX-2840
 * Brother HL-1110 series
 * Brother HL-1200 series
+* Brother HL-1210W series
+* Brother HL-1430 series
 * Brother HL-2030 series
 * Brother HL-2130 series
 * Brother HL-2140 series
@@ -58,12 +60,16 @@ The following printers have been reported to work with this driver:
 * Brother HL-5030 series
 * Brother HL-5040 series
 * Brother HL-5140 series
+* Brother HL-5250DN series
+* Brother HL-5350DN series
 * Brother HL-5370DW series
 * Brother HL-5450DN series
+* Brother HL-L1232W
 * Brother HL-L2300D series
 * Brother HL-L2305 series
 * Brother HL-L2310D series
 * Brother HL-L2320D series
+* Brother HL-L2325DW
 * Brother HL-L2335D series
 * Brother HL-L2340D series
 * Brother HL-L2350DW series
@@ -72,9 +78,14 @@ The following printers have been reported to work with this driver:
 * Brother HL-L2375DW series
 * Brother HL-L2380DW series
 * Brother HL-L2390DW
+* Brother HL-L2400D
 * Brother HL-L2400DW
+* Brother HL-L2400DWE
 * Brother HL-L2402D
 * Brother HL-L2405W
+* Brother HL-L2440DW
+* Brother HL-L2460DW
+* Brother HL-L2480DW
 * Brother HL-L5000D series
 * Brother MFC-1810 series
 * Brother MFC-1910W series
@@ -96,7 +107,11 @@ The following printers have been reported to work with this driver:
 * Brother MFC-L2700DW series
 * Brother MFC-L2710DN series
 * Brother MFC-L2710DW series
+* Brother MFC-L2740DW series
 * Brother MFC-L2750DW series
+* Brother MFC-L2800DW
+* Brother MFC-L2685DW
+* Brother MFC-L5800DW series
 * Fuji Xerox DocuPrint P265 dw
 * Lenovo LJ2650DN
 
