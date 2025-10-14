@@ -1,3 +1,29 @@
+brlaser v6.2.8
+    New printer entries:
+        Brother HL-1210W series
+        Brother HL-1430 series
+        Brother HL-2150N
+        Brother HL-5250DN series
+        Brother HL-5350DN series
+        Brother HL-L1232W
+        Brother HL-L2325DW
+        Brother HL-L2400D
+        Brother HL-L2400DWE
+        Brother HL-L2440DW
+        Brother HL-L2460DW
+        Brother HL-L2480DW
+        Brother MFC-L2685DW
+        Brother MFC-L2740DW series
+        Brother MFC-L2800DW
+        Brother MFC-L5800DW series
+
+    Code Changes:
+        Implemented support for all 1200dpi modes
+        Add toner density adjustment option
+
+    Issues Resolved:
+        Cannot build with CMake 4.0 (CMake < v3.5 support removed)
+
 brlaser v6.2.7 (2025-01-20)
     New printer entries:
         Brother DCP-7010

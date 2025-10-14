@@ -102,6 +102,7 @@ The following printers have been reported to work with this driver:
 * Brother MFC-8710DW
 * Brother MFC-8860DN
 * Brother MFC-9160
+* Brother MFC-L2685DW
 * Brother MFC-L2690DW
 * Brother MFC-L2700DN series
 * Brother MFC-L2700DW series
@@ -110,7 +111,6 @@ The following printers have been reported to work with this driver:
 * Brother MFC-L2740DW series
 * Brother MFC-L2750DW series
 * Brother MFC-L2800DW
-* Brother MFC-L2685DW
 * Brother MFC-L5800DW series
 * Fuji Xerox DocuPrint P265 dw
 * Lenovo LJ2650DN
